@@ -1,0 +1,37 @@
+[GLOBAL]
+pants_version = "2.18.0"
+backend_packages = [
+  "pants.backend.build_files.fmt.black",
+  "pants.backend.docker",
+  "pants.backend.experimental.terraform",
+#  "pants.backend.experimental.terraform.lint.tfsec",
+  "pants.backend.python",
+  "pants.backend.python.lint.black",
+  "pants.backend.python.lint.flake8",
+  "pants.backend.python.lint.isort",
+]
+
+[black]
+install_from_resolve = "python-default"
+
+[dockerfile-parser]
+install_from_resolve = "python-default"
+
+[environments-preview.names]
+docker_python = "//:docker_python"
+
+[flake8]
+install_from_resolve = "python-default"
+
+[isort]
+install_from_resolve = "python-default"
+
+[pytest]
+install_from_resolve = "python-default"
+
+[python]
+interpreter_constraints = ["==3.9.*"]
+enable_resolves = true
+
+[terraform-hcl2-parser]
+install_from_resolve = "python-default"
