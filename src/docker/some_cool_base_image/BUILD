@@ -1,1 +1,1 @@
-docker_image()
+docker_image(skip_push=True)

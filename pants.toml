@@ -14,6 +14,11 @@ backend_packages = [
 [black]
 install_from_resolve = "python-default"
 
+[docker]
+default_repository = "agoblet/polyglot_pants_example_{name}"
+env_vars = ["DOCKER_CONFIG=%(homedir)s/.docker"]
+build_args = ["GIT_COMMIT"]
+
 [dockerfile-parser]
 install_from_resolve = "python-default"
 
