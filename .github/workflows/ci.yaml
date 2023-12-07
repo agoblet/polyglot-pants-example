@@ -1,14 +1,10 @@
-name: Pants
+name: CI
 
-on:
-  pull_request:
-  push:
-    branches:
-      - main
+on: [pull_request]
 
 jobs:
-  pants:
-    name: Pants
+  ci:
+    name: CI
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3
@@ -49,11 +45,6 @@ jobs:
         pants --changed-since=origin/main --changed-dependents=transitive \
           check \
           test
-    - name: Deploy
-      if: github.ref == 'refs/heads/main'
-      run: |
-        pants --changed-since=HEAD^ --changed-dependents=transitive \
-          publish
     - name: Upload pants log
       uses: actions/upload-artifact@v3
       with:
