@@ -49,6 +49,11 @@ jobs:
         pants --changed-since=origin/main --changed-dependents=transitive \
           check \
           test
+    - name: Deploy
+      if: github.ref == 'refs/heads/main'
+      run: |
+        pants --changed-since=HEAD^ --changed-dependents=transitive \
+          publish
     - name: Upload pants log
       uses: actions/upload-artifact@v3
       with:
