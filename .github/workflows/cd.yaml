@@ -38,8 +38,9 @@ jobs:
         # Alternatively you change gha-cache-key to ignore old caches.
     - name: Deploy
       if: github.ref == 'refs/heads/main'
-      run: |
-        pants --changed-since=HEAD^ --changed-dependents=transitive \
+      run: | 
+        GIT_COMMIT=$(git rev-parse HEAD) \
+          pants --changed-since=HEAD^ --changed-dependents=transitive \
           publish
     - name: Upload pants log
       uses: actions/upload-artifact@v3
