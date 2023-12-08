@@ -5,6 +5,7 @@ backend_packages = [
   "pants.backend.docker",
   "pants.backend.experimental.terraform",
 #  "pants.backend.experimental.terraform.lint.tfsec",
+  "pants.backend.experimental.tools.yamllint",
   "pants.backend.python",
   "pants.backend.python.lint.black",
   "pants.backend.python.lint.flake8",
@@ -39,4 +40,7 @@ interpreter_constraints = ["==3.9.*"]
 enable_resolves = true
 
 [terraform-hcl2-parser]
+install_from_resolve = "python-default"
+
+[yamllint]
 install_from_resolve = "python-default"

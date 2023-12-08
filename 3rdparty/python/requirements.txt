@@ -7,3 +7,5 @@ pandas==2.1.2
 pytest==7.4.3
 python-hcl2==4.3.2
 uvicorn==0.24.0.post1
+yamllint==1.33.0
+PyYAML==6.0.1
