@@ -3,8 +3,8 @@ pants_version = "2.18.0"
 backend_packages = [
   "pants.backend.build_files.fmt.black",
   "pants.backend.docker",
+  "pants.backend.docker.lint.hadolint",
   "pants.backend.experimental.terraform",
-#  "pants.backend.experimental.terraform.lint.tfsec",
   "pants.backend.experimental.tools.yamllint",
   "pants.backend.python",
   "pants.backend.python.lint.black",
@@ -16,6 +16,7 @@ backend_packages = [
 
 [black]
 install_from_resolve = "python-default"
+requirements = ["black"]
 
 [docker]
 default_repository = "agoblet/polyglot_pants_example_{name}"
@@ -24,9 +25,11 @@ build_args = ["GIT_COMMIT"]
 
 [dockerfile-parser]
 install_from_resolve = "python-default"
+requirements = ["dockerfile"]
 
 [docformatter]
 install_from_resolve = "python-default"
+requirements = ["docformatter"]
 
 [environments-preview.names]
 docker_python = "//:docker_python"
@@ -37,6 +40,7 @@ requirements = ["flake8", "flake8-bugbear"]
 
 [isort]
 install_from_resolve = "python-default"
+requirements = ["isort"]
 
 [mypy]
 install_from_resolve = "python-default"
@@ -44,6 +48,7 @@ requirements = ["mypy","pandas-stubs"]
 
 [pytest]
 install_from_resolve = "python-default"
+requirements = ["pytest"]
 
 [python]
 interpreter_constraints = ["==3.9.*"]
@@ -51,6 +56,7 @@ enable_resolves = true
 
 [terraform-hcl2-parser]
 install_from_resolve = "python-default"
+requirements = ["python-hcl2"]
 
 [yamllint]
 install_from_resolve = "python-default"
