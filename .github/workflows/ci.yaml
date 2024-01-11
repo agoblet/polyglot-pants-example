@@ -1,11 +1,6 @@
 name: CI
 
-on:
-  pull_request:
-    paths:
-      - src/
-      - 3rdparty/
-      - BUILD
+on: [pull_request]
 
 jobs:
   ci:
