@@ -2,12 +2,10 @@ name: CI
 
 on:
   pull_request:
-    paths-ignore:
-    - pants.toml
-    - .hadolint.yaml
-    - .yamllint.yaml
-    - bandit.yaml
-    - .flake8
+    paths:
+      - src/
+      - 3rdparty/
+      - BUILD
 
 jobs:
   ci:
