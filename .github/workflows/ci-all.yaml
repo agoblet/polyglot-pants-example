@@ -42,12 +42,14 @@ jobs:
         pants \
           tailor --check \
           update-build-files --check \
-          lint
+          lint \
+          ::
     - name: Test
       run: |
         pants \
           check \
-          test
+          test \
+          ::
     - name: Upload pants log
       uses: actions/upload-artifact@v3
       with:

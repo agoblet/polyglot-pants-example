@@ -18,6 +18,7 @@ backend_packages = [
 [bandit]
 install_from_resolve = "python-default"
 requirements = ["bandit"]
+config = "bandit.yaml"
 
 [black]
 install_from_resolve = "python-default"
