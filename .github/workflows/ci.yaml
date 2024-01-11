@@ -1,6 +1,13 @@
 name: CI
 
-on: [pull_request]
+on:
+  pull_request:
+    paths-ignore:
+    - pants.toml
+    - .hadolint.yaml
+    - .yamllint.yaml
+    - bandit.yaml
+    - .flake8
 
 jobs:
   ci:
