@@ -15,6 +15,10 @@ backend_packages = [
   "pants.backend.python.typecheck.mypy",
 ]
 
+[bandit]
+install_from_resolve = "python-default"
+requirements = ["bandit"]
+
 [black]
 install_from_resolve = "python-default"
 requirements = ["black"]
