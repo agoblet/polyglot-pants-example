@@ -1,4 +1,4 @@
-name: CI diff with main
+name: CI all targets
 
 on: [pull_request]
 
@@ -10,7 +10,6 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - run: git fetch --prune
     - uses: actions/setup-python@v4
       with:
         python-version: 3.9
@@ -36,15 +35,17 @@ jobs:
         # Alternatively you change gha-cache-key to ignore old caches.
     - name: Lint
       run: |
-        pants --changed-since=origin/main \
+        pants \
           tailor --check \
           update-build-files --check \
-          lint
+          lint \
+          ::
     - name: Test
       run: |
-        pants --changed-since=origin/main --changed-dependents=transitive \
+        pants \
           check \
-          test
+          test \
+          ::
     - name: Upload pants log
       uses: actions/upload-artifact@v3
       with:

@@ -7,12 +7,18 @@ backend_packages = [
   "pants.backend.experimental.terraform",
   "pants.backend.experimental.tools.yamllint",
   "pants.backend.python",
+  "pants.backend.python.lint.bandit",
   "pants.backend.python.lint.black",
   "pants.backend.python.lint.docformatter",
   "pants.backend.python.lint.flake8",
   "pants.backend.python.lint.isort",
   "pants.backend.python.typecheck.mypy",
 ]
+
+[bandit]
+install_from_resolve = "python-default"
+requirements = ["bandit"]
+config = "bandit.yaml"
 
 [black]
 install_from_resolve = "python-default"
