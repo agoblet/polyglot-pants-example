@@ -1,4 +1,4 @@
-name: CI
+name: CI diff with main
 
 on: [pull_request]
 

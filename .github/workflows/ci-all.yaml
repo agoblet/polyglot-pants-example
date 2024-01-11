@@ -1,4 +1,4 @@
-name: CI All Targets
+name: CI all targets
 
 on: [pull_request]
 
