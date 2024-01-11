@@ -1,3 +1,4 @@
+"""Very cool app."""
 import uvicorn
 from fastapi import FastAPI
 from some_cool_library.main import generate_df

@@ -1,11 +1,16 @@
 black==23.11.0
-dockerfile
+dockerfile==3.3.1
+docformatter==1.7.5
 fastapi==0.104.1
 flake8==6.1.0
+flake8-bugbear==23.12.2
 isort==5.12.0
+moto[cloudformation, server]
+mypy
 pandas==2.1.2
+pandas-stubs
 pytest==7.4.3
 python-hcl2==4.3.2
+PyYAML==6.0.1
 uvicorn==0.24.0.post1
 yamllint==1.33.0
-PyYAML==6.0.1

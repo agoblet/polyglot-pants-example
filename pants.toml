@@ -8,8 +8,10 @@ backend_packages = [
   "pants.backend.experimental.tools.yamllint",
   "pants.backend.python",
   "pants.backend.python.lint.black",
+  "pants.backend.python.lint.docformatter",
   "pants.backend.python.lint.flake8",
   "pants.backend.python.lint.isort",
+  "pants.backend.python.typecheck.mypy",
 ]
 
 [black]
@@ -23,14 +25,22 @@ build_args = ["GIT_COMMIT"]
 [dockerfile-parser]
 install_from_resolve = "python-default"
 
+[docformatter]
+install_from_resolve = "python-default"
+
 [environments-preview.names]
 docker_python = "//:docker_python"
 
 [flake8]
 install_from_resolve = "python-default"
+requirements = ["flake8", "flake8-bugbear"]
 
 [isort]
 install_from_resolve = "python-default"
+
+[mypy]
+install_from_resolve = "python-default"
+requirements = ["mypy","pandas-stubs"]
 
 [pytest]
 install_from_resolve = "python-default"
@@ -44,3 +54,4 @@ install_from_resolve = "python-default"
 
 [yamllint]
 install_from_resolve = "python-default"
+requirements = ["yamllint"]
