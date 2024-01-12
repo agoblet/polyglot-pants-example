@@ -36,6 +36,11 @@ jobs:
         # but will cause the cache entry to grow without bound over time.
         # See https://pants.readme.io/docs/using-pants-in-ci for tips on how to periodically clean it up.
         # Alternatively you change gha-cache-key to ignore old caches.
+    - name: Log in to Docker Hub
+      uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+      with:
+        username: agoblet
+        password: ${{ secrets.DOCKERHUB_PAT }}
     - name: Deploy
       if: github.ref == 'refs/heads/main'
       run: | 
