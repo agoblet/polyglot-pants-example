@@ -1,5 +1,5 @@
 [GLOBAL]
-pants_version = "2.18.0"
+pants_version = "2.18.2"
 backend_packages = [
   "pants.backend.build_files.fmt.black",
   "pants.backend.docker",
@@ -37,6 +37,10 @@ requirements = ["dockerfile"]
 [docformatter]
 install_from_resolve = "python-default"
 requirements = ["docformatter"]
+
+[download-terraform]
+version = "1.4.6"
+extra_env_vars = ["AWS_REGION", "AWS_PROFILE"]
 
 [environments-preview.names]
 docker_python = "//:docker_python"

@@ -8,8 +8,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "mlops-tf-playground"
-    key    = "state/pants-test/terraform.tfstate"
+    bucket = "lighthouse-mlops-tf-state"
+    key    = "state/pants-test-axel/terraform.tfstate"
     region = "eu-west-1"
   }
 }
