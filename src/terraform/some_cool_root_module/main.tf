@@ -4,13 +4,13 @@ module "some_cool_module" {
 
 provider "aws" {}
 
-terraform {
- backend "s3" {
-   bucket = "lighthouse-mlops-tf-state"
-   key    = "state/pants-test-axel/terraform.tfstate"
-   region = "eu-west-1"
- }
-}
+#terraform {
+# backend "s3" {
+#   bucket = "lighthouse-mlops-tf-state"
+#   key    = "state/pants-test-axel/terraform.tfstate"
+#   region = "eu-west-1"
+# }
+#}
 
 module "lambda_function" {
   source = "terraform-aws-modules/lambda/aws"
@@ -20,6 +20,6 @@ module "lambda_function" {
   handler       = "lambda_function.handler"
   runtime       = "python3.9"
 
-  create_package = false
+  create_package         = false
   local_existing_package = "../../../dist/src.python.some_lambda/lambda.zip"
 }
