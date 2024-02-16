@@ -40,8 +40,9 @@ install_from_resolve = "python-default"
 requirements = ["docformatter"]
 
 [download-terraform]
-version = "1.4.6"
+version = "1.7.3"
 extra_env_vars = ["AWS_REGION", "AWS_PROFILE", "PATH"]
+known_versions = ["1.7.3|macos_arm64|85cddfd303c45989f0948a70ae03bb30f66c6e6106383697fe85ccd739137ca6|25892413"]
 
 [environments-preview.names]
 docker_python = "//:docker_python"

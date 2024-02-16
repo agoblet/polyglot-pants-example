@@ -4,13 +4,13 @@ module "some_cool_module" {
 
 provider "aws" {}
 
-#terraform {
-# backend "s3" {
-#   bucket = "lighthouse-mlops-tf-state"
-#   key    = "state/pants-test-axel/terraform.tfstate"
-#   region = "eu-west-1"
-# }
-#}
+terraform {
+ backend "s3" {
+   bucket = "lighthouse-mlops-tf-state"
+   key    = "state/pants-test-axel/terraform.tfstate"
+   region = "eu-west-1"
+ }
+}
 
 module "lambda_function" {
   source = "terraform-aws-modules/lambda/aws"
