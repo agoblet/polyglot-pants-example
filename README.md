@@ -13,10 +13,10 @@ Python
 - Deployed app code in [src/python/some_cool_app](src/python/some_cool_app)
 
 Docker
-- Dependency inference of base images in [src/python/some_cool_app/Dockerfile](src/python/some_cool_app/Dockerfile)
+- Dependency inference of base images in [src/python/some_cool_app/Dockerfile](src/docker/some_cool_app/Dockerfile)
 - Publishing images to Dockerhub in [pants.toml](pants.toml)
 - Tagging images with Git commit SHA in [BUILD](BUILD)
 - Skipping publishing for internal base images in [src/docker/some_cool_base_image/BUILD](src/docker/some_cool_base_image/BUILD)
 
 Polyglot
-- Dependency inference between Docker and Python in [src/python/some_cool_app/Dockerfile](src/python/some_cool_app/Dockerfile)
+- Dependency inference between Docker and Python in [src/python/some_cool_app/Dockerfile](src/docker/some_cool_app/Dockerfile)

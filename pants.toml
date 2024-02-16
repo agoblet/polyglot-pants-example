@@ -1,6 +1,7 @@
 [GLOBAL]
-pants_version = "2.18.2"
+pants_version = "2.19.0"
 backend_packages = [
+  "pants.backend.awslambda.python",
   "pants.backend.build_files.fmt.black",
   "pants.backend.docker",
   "pants.backend.docker.lint.hadolint",
@@ -40,7 +41,7 @@ requirements = ["docformatter"]
 
 [download-terraform]
 version = "1.4.6"
-extra_env_vars = ["AWS_REGION", "AWS_PROFILE"]
+extra_env_vars = ["AWS_REGION", "AWS_PROFILE", "PATH"]
 
 [environments-preview.names]
 docker_python = "//:docker_python"
